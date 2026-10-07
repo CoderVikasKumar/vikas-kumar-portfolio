@@ -25,6 +25,7 @@ app.use(helmet());
 const allowedOrigins = [
   "http://localhost:5173",
   "https://vikas12-portfolio-filhtk266.vercel.app",
+  "https://vikas12-portfolio.vercel.app",
 ];
 
 app.use(
@@ -42,6 +43,7 @@ app.use(
 
       return callback(new Error("Not allowed by CORS"));
     },
+
     credentials: true,
   })
 );
@@ -58,6 +60,7 @@ app.use(express.urlencoded({ extended: true }));
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
+
   message: {
     success: false,
     message: "Too many requests. Please try again later.",
