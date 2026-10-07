@@ -11,30 +11,24 @@ import {
 
 import "./AdminLogin.css";
 
-const API_URL = "http://localhost:5000/api";
+// Production Backend API
+const API_URL =
+  "https://vikas-kumar-portfolio-5v8r.onrender.com/api";
 
 export default function AdminLogin() {
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  const [showPassword, setShowPassword] =
-    useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [loading, setLoading] =
-    useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const [error, setError] =
-    useState("");
-
+  const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    const {
-      name,
-      value,
-    } = e.target;
+    const { name, value } = e.target;
 
     setFormData((prev) => ({
       ...prev,
@@ -44,7 +38,6 @@ export default function AdminLogin() {
     setError("");
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -52,7 +45,6 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-
       if (
         !formData.email.trim() ||
         !formData.password
@@ -62,111 +54,77 @@ export default function AdminLogin() {
         );
       }
 
-
       const response = await fetch(
         `${API_URL}/auth/login`,
         {
           method: "POST",
 
           headers: {
-            "Content-Type":
-              "application/json",
+            "Content-Type": "application/json",
           },
 
           body: JSON.stringify({
-            email:
-              formData.email.trim(),
-            password:
-              formData.password,
+            email: formData.email.trim(),
+            password: formData.password,
           }),
         }
       );
 
+      const data = await response.json();
 
-      const data =
-        await response.json();
-
-
-      if (
-        !response.ok ||
-        !data.success
-      ) {
+      if (!response.ok || !data.success) {
         throw new Error(
           data.message ||
             "Invalid email or password."
         );
       }
 
-
-      // Save JWT
+      // Save JWT token
       localStorage.setItem(
         "adminToken",
         data.token
       );
 
-
       // Save admin information
       localStorage.setItem(
         "adminData",
-        JSON.stringify(
-          data.admin
-        )
+        JSON.stringify(data.admin)
       );
 
-
-      // Dashboard
-      window.location.href =
-        "/admin";
-
+      // Redirect to dashboard
+      window.location.href = "/admin";
     } catch (error) {
-
       setError(
         error.message ||
           "Unable to login."
       );
-
     } finally {
-
       setLoading(false);
-
     }
   };
 
-
   return (
     <div className="admin-login-page">
-
       <div className="admin-login-glow glow-one" />
 
       <div className="admin-login-glow glow-two" />
 
-
       <div className="admin-login-card">
 
         {/* Logo */}
-
         <div className="admin-login-logo">
-
           <span className="admin-logo-dot" />
 
-          <strong>
-            VIKAS
-          </strong>
+          <strong>VIKAS</strong>
 
           <span className="admin-logo-line">
             .
           </span>
-
         </div>
 
-
         {/* Heading */}
-
         <div className="admin-login-heading">
-
-          <span>
-            ADMIN PANEL
-          </span>
+          <span>ADMIN PANEL</span>
 
           <h1>
             Welcome back<span>.</span>
@@ -176,27 +134,21 @@ export default function AdminLogin() {
             Sign in to manage your
             portfolio messages.
           </p>
-
         </div>
 
-
         {/* Form */}
-
         <form
           className="admin-login-form"
           onSubmit={handleSubmit}
         >
 
           {/* Email */}
-
           <div className="admin-login-field">
-
             <label htmlFor="admin-email">
               EMAIL
             </label>
 
             <div className="admin-input-wrap">
-
               <Mail size={16} />
 
               <input
@@ -204,31 +156,21 @@ export default function AdminLogin() {
                 type="email"
                 name="email"
                 placeholder="admin@example.com"
-                value={
-                  formData.email
-                }
-                onChange={
-                  handleChange
-                }
+                value={formData.email}
+                onChange={handleChange}
                 autoComplete="username"
                 required
               />
-
             </div>
-
           </div>
 
-
           {/* Password */}
-
           <div className="admin-login-field">
-
             <label htmlFor="admin-password">
               PASSWORD
             </label>
 
             <div className="admin-input-wrap">
-
               <Lock size={16} />
 
               <input
@@ -240,12 +182,8 @@ export default function AdminLogin() {
                 }
                 name="password"
                 placeholder="Enter your password"
-                value={
-                  formData.password
-                }
-                onChange={
-                  handleChange
-                }
+                value={formData.password}
+                onChange={handleChange}
                 autoComplete="current-password"
                 required
               />
@@ -258,6 +196,11 @@ export default function AdminLogin() {
                     !showPassword
                   )
                 }
+                aria-label={
+                  showPassword
+                    ? "Hide password"
+                    : "Show password"
+                }
               >
                 {showPassword ? (
                   <EyeOff size={15} />
@@ -265,29 +208,22 @@ export default function AdminLogin() {
                   <Eye size={15} />
                 )}
               </button>
-
             </div>
-
           </div>
 
-
           {/* Error */}
-
           {error && (
             <div className="admin-login-error">
               {error}
             </div>
           )}
 
-
-          {/* Login button */}
-
+          {/* Login Button */}
           <button
             type="submit"
             className="admin-login-button"
             disabled={loading}
           >
-
             {loading ? (
               <>
                 <Loader2
@@ -301,21 +237,14 @@ export default function AdminLogin() {
               <>
                 SIGN IN
 
-                <ArrowRight
-                  size={16}
-                />
+                <ArrowRight size={16} />
               </>
             )}
-
           </button>
-
         </form>
 
-
         {/* Footer */}
-
         <div className="admin-login-footer">
-
           <span>
             SECURE ADMIN ACCESS
           </span>
@@ -323,11 +252,9 @@ export default function AdminLogin() {
           <span>
             VIKAS KUMAR
           </span>
-
         </div>
 
       </div>
-
     </div>
   );
 }
