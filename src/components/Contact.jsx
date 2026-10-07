@@ -45,18 +45,23 @@ export default function Contact() {
     });
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://vikas-kumar-portfolio-5v8r.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.message || "Something went wrong.");
+        throw new Error(
+          data.message || "Something went wrong."
+        );
       }
 
       setStatus({
@@ -112,11 +117,15 @@ export default function Contact() {
             </p>
 
             <a
-              href="mailto:yourmail@gmail.com"
+              href="mailto:vikashkumarvikashkumar47178@gmail.com"
               className="contact-email"
             >
               <Mail size={17} />
-              <span>vikashkumarvikashkumar47178@gmail.com</span>
+
+              <span>
+                vikashkumarvikashkumar47178@gmail.com
+              </span>
+
               <ArrowUpRight size={15} />
             </a>
 
@@ -245,10 +254,14 @@ export default function Contact() {
                   className="contact-button"
                   disabled={loading}
                 >
-                  {loading ? "SENDING..." : "SEND MESSAGE"}
+                  {loading
+                    ? "SENDING..."
+                    : "SEND MESSAGE"}
 
                   {loading ? (
-                    <span className="contact-loading-dot">...</span>
+                    <span className="contact-loading-dot">
+                      ...
+                    </span>
                   ) : (
                     <Send size={16} />
                   )}
@@ -271,6 +284,7 @@ export default function Contact() {
                 <Github size={17} />
               </a>
 
+
               <a
                 href="https://www.linkedin.com/in/%EA%AA%9C%C4%B1k%EA%AB%9Ds-kumar-1010b33a2/"
                 target="_blank"
@@ -279,6 +293,7 @@ export default function Contact() {
               >
                 <Linkedin size={17} />
               </a>
+
 
               <a
                 href="https://www.instagram.com/_jatav_vikaskum/"
