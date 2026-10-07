@@ -1,0 +1,716 @@
+.hero-resume-button {
+  padding: 12px 18px;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-resume-button {
+    padding: 11px 15px;
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   PREMIUM RESUME BUTTON
+========================================================= */
+
+.hero-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 48px;
+  padding: 0 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hero-resume-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.hero-resume-btn:hover {
+  background: #ff3d00;
+  border-color: #ff3d00;
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 30px rgba(255, 61, 0, 0.2);
+}
+
+.hero-resume-btn:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-actions {
+    gap: 9px;
+  }
+
+  .hero-resume-btn {
+    height: 44px;
+    padding: 0 15px;
+    font-size: 9px;
+  }
+}
+
+
+
+/* =========================================================
+   PREMIUM HERO RESUME BUTTON
+========================================================= */
+
+.hero-actions .hero-resume-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  height: 48px !important;
+  min-width: 108px !important;
+  padding: 0 18px !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 999px !important;
+
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+  font-family: inherit !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.12em !important;
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.18);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.hero-actions .hero-resume-btn svg {
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0;
+  transition: transform 0.3s ease !important;
+}
+
+.hero-actions .hero-resume-btn:hover {
+  background: #ff3d00 !important;
+  border-color: #ff3d00 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-3px) !important;
+
+  box-shadow:
+    0 10px 30px rgba(255, 61, 0, 0.25),
+    0 0 0 1px rgba(255, 61, 0, 0.15) !important;
+}
+
+.hero-actions .hero-resume-btn:hover svg {
+  transform: translate(2px, -2px) !important;
+}
+
+
+/* Click effect */
+.hero-actions .hero-resume-btn:active {
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero-actions .hero-resume-btn {
+    height: 44px !important;
+    min-width: 100px !important;
+    padding: 0 15px !important;
+    font-size: 9px !important;
+  }
+
+  .hero-actions .hero-resume-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}
+
+
+
+/* =========================================================
+   HERO RESUME — PREMIUM CTA
+========================================================= */
+
+.hero-actions .hero-resume-btn {
+  position: relative;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+
+  height: 50px !important;
+  min-width: 118px !important;
+  padding: 0 20px !important;
+
+  border: 1px solid rgba(255, 61, 0, 0.55) !important;
+  border-radius: 10px !important;
+
+  background: #171116 !important;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+  font-family: inherit !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+
+  box-shadow:
+    0 0 0 1px rgba(255, 61, 0, 0.05),
+    0 8px 22px rgba(0, 0, 0, 0.25) !important;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+/* Orange accent line */
+.hero-actions .hero-resume-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+
+  border-radius: 0 4px 4px 0;
+  background: #ff3d00;
+
+  transition: height 0.25s ease;
+}
+
+/* Arrow */
+.hero-actions .hero-resume-btn svg {
+  width: 15px !important;
+  height: 15px !important;
+  color: #ff3d00 !important;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease !important;
+}
+
+/* Hover */
+.hero-actions .hero-resume-btn:hover {
+  background: #ff3d00 !important;
+  border-color: #ff3d00 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-3px) !important;
+
+  box-shadow:
+    0 12px 28px rgba(255, 61, 0, 0.25) !important;
+}
+
+.hero-actions .hero-resume-btn:hover::before {
+  background: #ffffff;
+  top: 8px;
+  bottom: 8px;
+}
+
+.hero-actions .hero-resume-btn:hover svg {
+  color: #ffffff !important;
+  transform: translate(3px, -3px);
+}
+
+/* Click */
+.hero-actions .hero-resume-btn:active {
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .hero-actions .hero-resume-btn {
+    height: 45px !important;
+    min-width: 105px !important;
+    padding: 0 16px !important;
+    font-size: 9px !important;
+    border-radius: 9px !important;
+  }
+
+  .hero-actions .hero-resume-btn::before {
+    top: 9px;
+    bottom: 9px;
+  }
+}
+
+
+
+/* =========================================
+   PREMIUM RESUME BUTTON
+========================================= */
+
+.hero-actions .hero-resume-btn {
+  position: relative;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  height: 48px !important;
+  min-width: 112px !important;
+  padding: 0 18px !important;
+
+  border: 1px solid rgba(255, 61, 0, 0.55) !important;
+  border-radius: 10px !important;
+
+  background: #171116 !important;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+  font-family: inherit !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1 !important;
+
+  cursor: pointer !important;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+
+  transition: all 0.3s ease !important;
+}
+
+.hero-actions .hero-resume-btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+
+  border-radius: 0 4px 4px 0;
+  background: #ff3d00;
+
+  transition: all 0.3s ease;
+}
+
+.hero-actions .hero-resume-btn svg {
+  color: #ff3d00;
+  transition: all 0.3s ease;
+}
+
+.hero-actions .hero-resume-btn:hover {
+  background: #ff3d00 !important;
+  border-color: #ff3d00 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-3px) !important;
+
+  box-shadow: 0 12px 30px rgba(255, 61, 0, 0.28);
+}
+
+.hero-actions .hero-resume-btn:hover::before {
+  background: #ffffff;
+}
+
+.hero-actions .hero-resume-btn:hover svg {
+  color: #ffffff;
+  transform: translate(3px, -3px);
+}
+
+.hero-actions .hero-resume-btn:active {
+  transform: translateY(-1px) !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-actions .hero-resume-btn {
+    height: 44px !important;
+    min-width: 102px !important;
+    padding: 0 15px !important;
+    font-size: 9px !important;
+  }
+}
+
+
+
+.hero-actions .hero-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  height: 48px;
+  min-width: 112px;
+  padding: 0 19px;
+
+  border: 1px solid rgba(255, 61, 0, 0.55);
+  border-radius: 999px;
+
+  background: #111014;
+  color: #fff;
+
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.hero-actions .hero-resume-btn svg {
+  color: #ff3d00;
+  transition: 0.3s ease;
+}
+
+.hero-actions .hero-resume-btn:hover {
+  background: #ff3d00;
+  border-color: #ff3d00;
+  color: #fff;
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 28px rgba(255, 61, 0, 0.25);
+}
+
+.hero-actions .hero-resume-btn:hover svg {
+  color: #fff;
+  transform: translate(3px, -3px);
+}
+
+.hero-actions .hero-resume-btn:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+  .hero-actions .hero-resume-btn {
+    height: 44px;
+    min-width: 102px;
+    padding: 0 16px;
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================
+   RESUME BUTTON
+========================================= */
+
+.hero-actions .btn-resume {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  height: 48px !important;
+  min-width: 110px !important;
+  padding: 0 18px !important;
+
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(255, 61, 0, 0.55) !important;
+  border-radius: 999px !important;
+
+  background: #171116 !important;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-family: inherit !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.hero-actions .btn-resume svg {
+  color: #ff3d00 !important;
+  transition: transform 0.3s ease, color 0.3s ease !important;
+}
+
+.hero-actions .btn-resume:hover {
+  background: #ff3d00 !important;
+  border-color: #ff3d00 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-2px) !important;
+
+  box-shadow: 0 10px 25px rgba(255, 61, 0, 0.25) !important;
+}
+
+.hero-actions .btn-resume:hover svg {
+  color: #ffffff !important;
+  transform: translate(3px, -3px) !important;
+}
+
+.hero-actions .btn-resume:active {
+  transform: translateY(0) !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .hero-actions .btn-resume {
+    height: 44px !important;
+    min-width: 100px !important;
+    padding: 0 15px !important;
+    font-size: 9px !important;
+  }
+}
+
+
+
+
+
+
+
+/* =========================================================
+   HERO ACTIONS
+========================================================= */
+
+.hero-actions {
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+
+  gap: 10px !important;
+
+  width: max-content !important;
+  max-width: 100% !important;
+
+  margin-top: 24px !important;
+}
+
+
+/* =========================================================
+   VIEW WORK + CONTACT
+========================================================= */
+
+.hero-actions .btn-primary,
+.hero-actions .btn-ghost {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+
+/* =========================================================
+   RESUME BUTTON
+========================================================= */
+
+.hero-actions .btn-resume-final {
+  position: relative !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  flex: 0 0 auto !important;
+
+  width: 108px !important;
+  min-width: 108px !important;
+  height: 48px !important;
+
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+
+  gap: 8px !important;
+
+  border: 1px solid rgba(255, 61, 0, 0.55) !important;
+  border-radius: 999px !important;
+
+  background: #171116 !important;
+  color: #ffffff !important;
+
+  text-decoration: none !important;
+
+  font-family: inherit !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.04em !important;
+
+  white-space: nowrap !important;
+
+  cursor: pointer !important;
+
+  box-shadow:
+    0 7px 20px rgba(0, 0, 0, 0.22) !important;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+
+/* Resume arrow */
+
+.hero-actions .btn-resume-final svg {
+  width: 15px !important;
+  height: 15px !important;
+
+  flex-shrink: 0 !important;
+
+  color: #ff3d00 !important;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease !important;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.hero-actions .btn-resume-final:hover {
+  background: #ff3d00 !important;
+  border-color: #ff3d00 !important;
+  color: #ffffff !important;
+
+  transform: translateY(-3px) !important;
+
+  box-shadow:
+    0 12px 28px rgba(255, 61, 0, 0.28) !important;
+}
+
+.hero-actions .btn-resume-final:hover svg {
+  color: #ffffff !important;
+
+  transform: translate(3px, -3px) !important;
+}
+
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.hero-actions .btn-resume-final:active {
+  transform: translateY(-1px) !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    flex-wrap: wrap !important;
+  }
+
+  .hero-actions .btn-resume-final {
+    width: 102px !important;
+    min-width: 102px !important;
+    height: 44px !important;
+
+    padding: 0 14px !important;
+
+    font-size: 9px !important;
+  }
+
+  .hero-actions .btn-resume-final svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}

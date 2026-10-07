@@ -1,0 +1,782 @@
+/* =========================================================
+   EXPERIENCE
+   Premium Editorial Timeline
+========================================================= */
+
+.experience-section {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0;
+  background: #080709;
+}
+
+/* Background glow */
+.experience-section::before {
+  content: "";
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  top: 15%;
+  right: -260px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 61, 0, 0.035);
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   EXPERIENCE LIST
+========================================================= */
+
+.experience-list {
+  position: relative;
+  margin-top: 90px;
+}
+
+
+/* =========================================================
+   EXPERIENCE ITEM
+========================================================= */
+
+.experience-item {
+  position: relative;
+
+  display: grid;
+
+  /*
+    Year       Timeline       Content
+    180px        40px           rest
+  */
+  grid-template-columns: 180px 40px minmax(0, 1fr);
+
+  column-gap: 28px;
+
+  min-height: 270px;
+
+  padding-bottom: 45px;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.experience-timeline {
+  position: absolute;
+
+  top: 5px;
+  left: 194px;
+
+  width: 12px;
+  height: calc(100% - 25px);
+
+  pointer-events: none;
+}
+
+
+/* Timeline dot */
+
+.experience-dot {
+  position: absolute;
+
+  top: 2px;
+  left: 0;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #ff3d00;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 61, 0, 0.08),
+    0 0 20px rgba(255, 61, 0, 0.45);
+
+  z-index: 3;
+}
+
+
+/* Timeline line */
+
+.experience-line {
+  position: absolute;
+
+  top: 17px;
+  left: 4px;
+
+  width: 1px;
+  height: calc(100% - 17px);
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.025)
+    );
+}
+
+
+/* =========================================================
+   DATE / YEAR
+========================================================= */
+
+.experience-date {
+  grid-column: 1;
+
+  padding-top: 0;
+
+  text-align: right;
+}
+
+.experience-date span {
+  display: block;
+
+  color: #ffffff;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.5px;
+}
+
+.experience-date small {
+  display: block;
+
+  margin-top: 9px;
+
+  color: rgba(255, 255, 255, 0.24);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 1.2px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
+
+.experience-content {
+  /*
+    Force the content to occupy the full
+    available third column.
+  */
+  grid-column: 3;
+
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 34px 38px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.012)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* orange top accent */
+
+.experience-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 38px;
+
+  width: 42px;
+  height: 1px;
+
+  background: #ff3d00;
+
+  opacity: 0.8;
+
+  transition: width 0.35s ease;
+}
+
+
+/* soft glow */
+
+.experience-content::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -150px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 61, 0, 0.055);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  transition: transform 0.5s ease;
+}
+
+
+/* hover */
+
+.experience-content:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 61, 0, 0.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.016)
+    );
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.28);
+}
+
+.experience-content:hover::before {
+  width: 75px;
+}
+
+.experience-content:hover::after {
+  transform: scale(1.3);
+}
+
+
+/* =========================================================
+   CONTENT HEADER
+========================================================= */
+
+.experience-heading {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.experience-heading h3 {
+  margin: 0;
+
+  max-width: 650px;
+
+  color: #ffffff;
+
+  font-size: clamp(24px, 2.3vw, 34px);
+
+  line-height: 1.05;
+
+  font-weight: 700;
+
+  letter-spacing: -1.5px;
+}
+
+
+.experience-heading p {
+  margin: 10px 0 0;
+
+  color: #ff3d00;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   INDEX
+========================================================= */
+
+.experience-index {
+  flex-shrink: 0;
+
+  color: rgba(255, 255, 255, 0.17);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.experience-description {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin: 25px 0 0;
+
+  color: rgba(255, 255, 255, 0.43);
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+========================================================= */
+
+.experience-stack {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+
+.experience-stack span {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 30px;
+
+  padding: 0 12px;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 999px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.experience-stack span:hover {
+  color: #ffffff;
+
+  border-color: rgba(255, 61, 0, 0.35);
+
+  background: rgba(255, 61, 0, 0.07);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.experience-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 15px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.experience-footer span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.27);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 1px;
+}
+
+
+.experience-footer i {
+  display: block;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #39d66b;
+
+  box-shadow:
+    0 0 10px rgba(57, 214, 107, 0.55);
+}
+
+
+.experience-footer p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.21);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 8px;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .experience-section {
+    padding: 120px 0;
+  }
+
+  .experience-item {
+    grid-template-columns: 130px 35px minmax(0, 1fr);
+
+    column-gap: 20px;
+  }
+
+  .experience-timeline {
+    left: 142px;
+  }
+
+  .experience-content {
+    padding: 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .experience-section {
+    padding: 100px 0;
+  }
+
+  .experience-list {
+    margin-top: 60px;
+  }
+
+  .experience-item {
+    display: grid;
+
+    grid-template-columns: 30px minmax(0, 1fr);
+
+    column-gap: 16px;
+
+    min-height: auto;
+
+    padding-bottom: 30px;
+  }
+
+
+  /* Timeline */
+
+  .experience-timeline {
+    position: absolute;
+
+    top: 3px;
+    left: 0;
+
+    width: 10px;
+    height: calc(100% - 10px);
+  }
+
+
+  /* Date */
+
+  .experience-date {
+    grid-column: 2;
+
+    padding: 0;
+
+    margin-bottom: 14px;
+
+    text-align: left;
+  }
+
+  .experience-date span {
+    font-size: 12px;
+  }
+
+
+  /* Card */
+
+  .experience-content {
+    grid-column: 2;
+
+    padding: 25px;
+
+    border-radius: 16px;
+  }
+
+
+  .experience-heading h3 {
+    font-size: 23px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .experience-description {
+    font-size: 12px;
+
+    line-height: 1.8;
+  }
+
+
+  .experience-footer {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .experience-section {
+    padding: 85px 0;
+  }
+
+  .experience-content {
+    padding: 22px;
+  }
+
+  .experience-heading h3 {
+    font-size: 21px;
+  }
+
+  .experience-stack {
+    gap: 6px;
+  }
+
+  .experience-stack span {
+    min-height: 27px;
+
+    padding: 0 9px;
+
+    font-size: 7px;
+  }
+}
+
+
+/* =========================================
+   EXPERIENCE — COMPACT PROFESSIONAL
+========================================= */
+
+.experience-section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+  min-height: auto !important;
+}
+
+/* Heading */
+.experience-section h2 {
+  font-size: 48px !important;
+  line-height: 1 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Description */
+.experience-section p {
+  font-size: 12px !important;
+  line-height: 1.6 !important;
+}
+
+/* Experience list */
+.experience-section .experience-list {
+  margin-top: 32px !important;
+}
+
+/* Each experience item */
+.experience-section .experience-item {
+  padding: 20px 0 !important;
+  min-height: auto !important;
+}
+
+/* Title */
+.experience-section .experience-item h3 {
+  font-size: 17px !important;
+  line-height: 1.25 !important;
+}
+
+/* Company / date / small text */
+.experience-section .experience-item span {
+  font-size: 9px !important;
+  line-height: 1.4 !important;
+}
+
+/* Description */
+.experience-section .experience-item p {
+  max-width: 650px;
+  font-size: 11px !important;
+  line-height: 1.55 !important;
+  margin-top: 8px !important;
+}
+
+/* Remove excessive gaps */
+.experience-section .experience-item + .experience-item {
+  margin-top: 0 !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .experience-section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .experience-section h2 {
+    font-size: 42px !important;
+  }
+
+  .experience-section .experience-item {
+    padding: 17px 0 !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .experience-section {
+    padding-top: 45px !important;
+    padding-bottom: 45px !important;
+  }
+
+  .experience-section h2 {
+    font-size: 38px !important;
+  }
+
+  .experience-section .experience-list {
+    margin-top: 25px !important;
+  }
+
+  .experience-section .experience-item {
+    padding: 15px 0 !important;
+  }
+
+  .experience-section .experience-item h3 {
+    font-size: 15px !important;
+  }
+
+  .experience-section .experience-item p {
+    font-size: 10.5px !important;
+  }
+}
+
+
+/* =========================================
+   VARTAX TRAINING HIGHLIGHT
+========================================= */
+
+.experience-highlight {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.experience-highlight span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 9px;
+
+  border: 1px solid rgba(255, 61, 0, 0.25);
+  border-radius: 999px;
+
+  background: rgba(255, 61, 0, 0.06);
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.experience-highlight span:nth-child(2) {
+  color: #ff3d00;
+  border-color: rgba(255, 61, 0, 0.45);
+}
+
+@media (max-width: 600px) {
+  .experience-highlight {
+    gap: 6px;
+  }
+
+  .experience-highlight span {
+    font-size: 7px;
+    padding: 4px 8px;
+  }
+}

@@ -1,0 +1,163 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  width: 100%;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links button {
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+
+  cursor: pointer;
+
+  padding: 0;
+  margin: 0;
+
+  transition: color 0.25s ease;
+}
+
+.nav-links button:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   RESUME
+   EXACT SAME AS HOME / ABOUT / SKILLS
+========================================= */
+
+.nav-links .nav-resume {
+  border: none;
+  background: transparent;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+
+  cursor: pointer;
+
+  padding: 0;
+  margin: 0;
+
+  text-decoration: none;
+
+  transition: color 0.25s ease;
+}
+
+.nav-links .nav-resume:hover {
+  color: #ffffff;
+}
+
+
+/* =========================================
+   HIRE ME
+========================================= */
+
+.nav-links .nav-hire {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #ffffff;
+
+  padding: 10px 16px;
+
+  border: 1px solid rgba(255, 61, 0, 0.55);
+  border-radius: 999px;
+
+  background: rgba(255, 61, 0, 0.08);
+
+  transition: all 0.25s ease;
+}
+
+.nav-links .nav-hire:hover {
+  color: #ffffff;
+  background: #ff3d00;
+  border-color: #ff3d00;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.menu-toggle {
+  display: none;
+
+  border: none;
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .nav-links .nav-resume {
+    font-size: 14px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

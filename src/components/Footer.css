@@ -1,0 +1,501 @@
+/* =========================================================
+   FOOTER
+   Premium Dark / Orange
+========================================================= */
+
+.footer-section {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 70px 0 28px;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 61, 0, 0.07),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #090709 0%,
+      #060506 100%
+    );
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.footer-section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: -230px;
+  bottom: -260px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 61, 0, 0.06);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   FOOTER TOP
+========================================================= */
+
+.footer-top {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    0.8fr
+    0.8fr;
+
+  gap: 70px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-brand {
+  max-width: 380px;
+}
+
+.footer-logo {
+  display: inline-block;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 25px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -1.2px;
+}
+
+.footer-logo span {
+  color: #ff3d00;
+}
+
+.footer-brand p {
+  max-width: 340px;
+
+  margin: 16px 0 0;
+
+  color: rgba(255, 255, 255, 0.32);
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.footer-heading {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.22);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.footer-links {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 9px;
+}
+
+.footer-links button {
+  padding: 0;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  background: none;
+
+  border: none;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-links button:hover {
+  color: #ff3d00;
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.footer-social-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 9px;
+}
+
+.footer-social-links a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: rgba(255, 255, 255, 0.42);
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-social-links a svg:last-child {
+  margin-left: 2px;
+
+  opacity: 0.4;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.footer-social-links a:hover {
+  color: #ff3d00;
+
+  transform: translateX(3px);
+}
+
+.footer-social-links a:hover svg:last-child {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.footer-divider {
+  position: relative;
+  z-index: 2;
+
+  height: 1px;
+
+  margin: 55px 0 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 61, 0, 0.2),
+      rgba(255, 255, 255, 0.07),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  color: rgba(255, 255, 255, 0.2);
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.5px;
+}
+
+.footer-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.footer-status i {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #39d66b;
+
+  box-shadow:
+    0 0 8px rgba(57, 214, 107, 0.5);
+}
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.back-top {
+  justify-self: end;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 11px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 6px;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 0.7px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.back-top svg {
+  color: #ff3d00;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.back-top:hover {
+  color: #ffffff;
+
+  border-color:
+    rgba(255, 61, 0, 0.3);
+
+  transform: translateY(-2px);
+}
+
+.back-top:hover svg {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+  .footer-section {
+    padding: 60px 0 25px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+
+  .footer-divider {
+    margin-top: 40px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 1fr;
+
+    align-items: flex-start;
+
+    gap: 14px;
+  }
+
+  .back-top {
+    justify-self: start;
+  }
+}
+
+/* =========================================
+   FOOTER — COMPACT PROFESSIONAL
+========================================= */
+
+.footer {
+  padding-top: 42px !important;
+  padding-bottom: 22px !important;
+  min-height: auto !important;
+}
+
+/* Main footer heading */
+.footer h2 {
+  font-size: 28px !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* Footer paragraph */
+.footer p {
+  font-size: 10px !important;
+  line-height: 1.55 !important;
+}
+
+/* Footer content */
+.footer .footer-content {
+  gap: 22px !important;
+}
+
+/* Footer navigation */
+.footer .footer-links {
+  gap: 16px !important;
+}
+
+.footer .footer-links a {
+  font-size: 9px !important;
+}
+
+/* Social icons */
+.footer .footer-socials {
+  gap: 9px !important;
+}
+
+.footer .footer-socials a {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* Bottom section */
+.footer .footer-bottom {
+  margin-top: 25px !important;
+  padding-top: 15px !important;
+  font-size: 8px !important;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .footer {
+    padding-top: 38px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .footer h2 {
+    font-size: 25px !important;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding-top: 32px !important;
+    padding-bottom: 18px !important;
+  }
+
+  .footer h2 {
+    font-size: 23px !important;
+  }
+
+  .footer p {
+    font-size: 9px !important;
+  }
+
+  .footer .footer-content {
+    gap: 18px !important;
+  }
+
+  .footer .footer-links {
+    gap: 12px !important;
+    flex-wrap: wrap;
+  }
+}
