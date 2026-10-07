@@ -22,9 +22,26 @@ app.use(helmet());
 // ================================
 // CORS
 // ================================
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://vikas12-portfolio-filhtk266.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: (origin, callback) => {
+      // Allow requests without an Origin header
+      // such as Postman/server-to-server requests
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -85,6 +102,14 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   console.error("Server Error:", err);
 
+  // CORS error
+  if (err.message === "Not allowed by CORS") {
+    return res.status(403).json({
+      success: false,
+      message: "CORS: Origin not allowed.",
+    });
+  }
+
   res.status(500).json({
     success: false,
     message: "Internal server error.",
@@ -96,6 +121,6 @@ app.use((err, req, res, next) => {
 // ================================
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });
