@@ -11,6 +11,9 @@ import {
 import SectionHeading from "./SectionHeading";
 import "./Contact.css";
 
+const API_URL =
+  "https://vikas-kumar-portfolio-5v8r.onrender.com/api/contact";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -39,28 +42,26 @@ export default function Contact() {
     e.preventDefault();
 
     setLoading(true);
+
     setStatus({
       type: "",
       message: "",
     });
 
     try {
-      const response = await fetch(
-        "https://vikas-kumar-portfolio-5v8r.onrender.com/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
       const data = await response.json();
 
       if (!response.ok) {
         throw new Error(
-          data.message || "Something went wrong."
+          data.message || "Unable to send your message."
         );
       }
 
@@ -76,6 +77,8 @@ export default function Contact() {
         message: "",
       });
     } catch (error) {
+      console.error("Contact form error:", error);
+
       setStatus({
         type: "error",
         message:
@@ -113,7 +116,8 @@ export default function Contact() {
 
             <p>
               I'm open to internships, freelance opportunities,
-              collaborations and interesting web development projects.
+              collaborations and interesting web development
+              projects.
             </p>
 
             <a
@@ -131,7 +135,6 @@ export default function Contact() {
 
           </div>
 
-
           {/* RIGHT */}
           <div className="contact-card">
 
@@ -144,7 +147,6 @@ export default function Contact() {
               </span>
             </div>
 
-
             <div className="contact-card-content">
 
               <h4>
@@ -156,16 +158,17 @@ export default function Contact() {
                 collaboration opportunity.
               </p>
 
-
               {/* CONTACT FORM */}
               <form
                 className="contact-form"
                 onSubmit={handleSubmit}
               >
 
+                {/* NAME + EMAIL */}
                 <div className="contact-form-row">
 
                   <div className="contact-field">
+
                     <label htmlFor="name">
                       NAME
                     </label>
@@ -180,11 +183,13 @@ export default function Contact() {
                       required
                       minLength={2}
                       maxLength={100}
+                      autoComplete="name"
                     />
+
                   </div>
 
-
                   <div className="contact-field">
+
                     <label htmlFor="email">
                       EMAIL
                     </label>
@@ -197,13 +202,16 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      autoComplete="email"
                     />
+
                   </div>
 
                 </div>
 
-
+                {/* SUBJECT */}
                 <div className="contact-field">
+
                   <label htmlFor="subject">
                     SUBJECT
                   </label>
@@ -218,10 +226,12 @@ export default function Contact() {
                     required
                     maxLength={200}
                   />
+
                 </div>
 
-
+                {/* MESSAGE */}
                 <div className="contact-field">
+
                   <label htmlFor="message">
                     MESSAGE
                   </label>
@@ -237,26 +247,30 @@ export default function Contact() {
                     maxLength={2000}
                     rows={5}
                   />
+
                 </div>
 
-
+                {/* STATUS */}
                 {status.message && (
                   <div
                     className={`contact-form-status ${status.type}`}
+                    role="alert"
                   >
                     {status.message}
                   </div>
                 )}
 
-
+                {/* SUBMIT */}
                 <button
                   type="submit"
                   className="contact-button"
                   disabled={loading}
                 >
-                  {loading
-                    ? "SENDING..."
-                    : "SEND MESSAGE"}
+                  <span>
+                    {loading
+                      ? "SENDING..."
+                      : "SEND MESSAGE"}
+                  </span>
 
                   {loading ? (
                     <span className="contact-loading-dot">
@@ -265,12 +279,12 @@ export default function Contact() {
                   ) : (
                     <Send size={16} />
                   )}
+
                 </button>
 
               </form>
 
             </div>
-
 
             {/* SOCIALS */}
             <div className="contact-socials">
@@ -284,7 +298,6 @@ export default function Contact() {
                 <Github size={17} />
               </a>
 
-
               <a
                 href="https://www.linkedin.com/in/%EA%AA%9C%C4%B1k%EA%AB%9Ds-kumar-1010b33a2/"
                 target="_blank"
@@ -293,7 +306,6 @@ export default function Contact() {
               >
                 <Linkedin size={17} />
               </a>
-
 
               <a
                 href="https://www.instagram.com/_jatav_vikaskum/"
@@ -309,7 +321,6 @@ export default function Contact() {
           </div>
 
         </div>
-
 
         {/* BOTTOM */}
         <div className="contact-footer">
